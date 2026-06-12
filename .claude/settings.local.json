@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($py = \\(Get-Command python -ErrorAction SilentlyContinue\\).Source; \"python: $py\"; if\\($py\\){ python -c \"import pypdf; print\\('pypdf ok'\\)\" 2>$null; python -c \"import pdfplumber; print\\('pdfplumber ok'\\)\" 2>$null; python -c \"import fitz; print\\('fitz ok'\\)\" 2>$null })",
+      "PowerShell(python -m pip install pypdf --quiet 2>&1)",
+      "PowerShell(python -c \"import pypdf; r=pypdf.PdfReader\\(r'D:\\\\My-portfolio\\\\src\\\\Farhan_CV.pdf'\\); print\\('\\\\n'.join\\(p.extract_text\\(\\) for p in r.pages\\)\\)\")",
+      "Bash(npm run *)",
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget"
+    ]
+  }
+}
