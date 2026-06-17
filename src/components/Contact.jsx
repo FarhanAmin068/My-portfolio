@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Section from './Section'
-import { fadeLeft, fadeRight, viewport } from '../lib/motion'
+import { fadeUp, viewport } from '../lib/motion'
 
 const LINKS = [
   {
@@ -57,7 +57,7 @@ export default function Contact({ flip }) {
     >
       <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
         {/* Info */}
-        <motion.div variants={fadeLeft} initial="hidden" whileInView="show" viewport={viewport}>
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}>
           <h3 className="text-2xl font-bold text-white mb-3">Say hello</h3>
           <p className="text-slate-400 text-sm leading-relaxed mb-8">
             Whether you're a researcher, professor, or fellow student — I'd love to hear
@@ -92,7 +92,7 @@ export default function Contact({ flip }) {
         </motion.div>
 
         {/* Form */}
-        <motion.div variants={fadeRight} initial="hidden" whileInView="show" viewport={viewport}>
+        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}>
           <form onSubmit={handleSubmit} className="card p-8 space-y-5">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>

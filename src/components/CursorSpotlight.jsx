@@ -6,6 +6,8 @@ export default function CursorSpotlight() {
 
   useEffect(() => {
     const el = ref.current
+    // Touch devices have no cursor — skip the rAF loop entirely (phone perf)
+    if (window.matchMedia('(pointer: coarse)').matches) return
     let x = window.innerWidth / 2
     let y = window.innerHeight / 2
     let tx = x

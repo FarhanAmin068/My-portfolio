@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import AuroraBackground from './components/AuroraBackground'
 import CursorSpotlight from './components/CursorSpotlight'
@@ -15,56 +14,19 @@ import Achievements from './components/Achievements'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-// Scroll-linked stage: each section slides up, scales and brightens as it
-// enters the viewport, then gently recedes as you scroll past — a live
-// transition on every scroll, not a one-shot reveal. Driven by a rAF loop
-// (polling, not scroll events) so it works in every embedding environment.
+// Section entrance — one clean, GPU-only reveal (opacity + slide up) that
+// fires once as the section scrolls into view. No continuous loops, no blur:
+// buttery on both desktop and mobile.
 function Stage({ children }) {
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduced) return
-
-    let cur = { o: 0.15, y: 90, s: 0.94 }
-    let raf
-
-    const tick = () => {
-      const r = el.getBoundingClientRect()
-      const vh = window.innerHeight
-      const p = Math.min(1, Math.max(0, (vh - r.top) / (r.height + vh)))
-
-      let target
-      if (p < 0.18) {
-        const t = p / 0.18
-        target = { o: 0.15 + t * 0.85, y: 90 * (1 - t), s: 0.94 + t * 0.06 }
-      } else if (p > 0.85) {
-        const t = (p - 0.85) / 0.15
-        target = { o: 1 - t * 0.65, y: -46 * t, s: 1 - 0.03 * t }
-      } else {
-        target = { o: 1, y: 0, s: 1 }
-      }
-
-      // Lerp toward target for a soft settle
-      cur.o += (target.o - cur.o) * 0.18
-      cur.y += (target.y - cur.y) * 0.18
-      cur.s += (target.s - cur.s) * 0.18
-
-      el.style.opacity = cur.o.toFixed(3)
-      el.style.transform = `translateY(${cur.y.toFixed(2)}px) scale(${cur.s.toFixed(4)})`
-      raf = requestAnimationFrame(tick)
-    }
-
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [])
-
   return (
-    <div ref={ref} style={{ willChange: 'transform, opacity' }}>
+    <motion.div
+      initial={{ opacity: 0, y: 48 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    >
       {children}
-    </div>
+    </motion.div>
   )
 }
 
