@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-// Soft glow that trails the cursor with a gentle spring lag.
+
 export default function CursorSpotlight() {
   const ref = useRef(null)
 
