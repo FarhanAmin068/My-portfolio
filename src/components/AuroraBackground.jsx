@@ -4,7 +4,7 @@ export default function AuroraBackground() {
   return (
     <div
       className="fixed inset-0 overflow-hidden pointer-events-none"
-      style={{ zIndex: 0, transform: 'translateZ(0)', contain: 'strict' }}
+      style={{ zIndex: 0, transform: 'translateZ(0)' }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-10%,rgba(49,46,129,0.4),transparent_60%)]" />
       <div className="aurora-sheen" />

@@ -238,6 +238,17 @@
   .aurora-blob, .aurora-sheen, .aurora-stars { animation: none; }
 }
 
+/* Mobile / touch / in-app browsers (Messenger, Instagram, etc.):
+   keep the aurora COLOUR but drop the GPU-heavy, webview-incompatible bits —
+   the spinning conic sheen, animated giant blurs, and masked dot-grid.
+   Result: same look, far smoother, and no broken rendering in old WebViews. */
+@media (max-width: 1023px), (pointer: coarse) {
+  .aurora-sheen { display: none; }        /* conic-gradient + huge spinning blur */
+  .aurora-blob { animation: none; }        /* keep colour, stop the motion */
+  .aurora-stars { animation: none; }
+  .dot-grid::before { display: none; }     /* mask-image breaks in webviews */
+}
+
 /* Faint dot-grid texture across the page */
 .dot-grid::before {
   content: '';
