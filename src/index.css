@@ -53,18 +53,16 @@
     animation: gradient-pan 8s ease infinite;
   }
 
+  /* Solid translucent surfaces — NO backdrop-filter (that's the scroll-killer).
+     Over the dark aurora these read as glass without the per-frame blur cost. */
   .glass {
-    background: rgba(148, 163, 184, 0.04);
+    background: rgba(20, 25, 43, 0.55);
     border: 1px solid rgba(148, 163, 184, 0.1);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
   }
 
   .glass-strong {
-    background: rgba(10, 14, 28, 0.75);
+    background: rgba(8, 11, 24, 0.9);
     border: 1px solid rgba(148, 163, 184, 0.12);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
   }
 
   .section-label {
@@ -152,9 +150,10 @@
   position: absolute;
   border-radius: 9999px;
   filter: blur(95px);
-  opacity: 0.62;
+  opacity: 0.5;
   will-change: transform;
-  mix-blend-mode: screen;
+  /* No mix-blend-mode — blending over scrolling content forces full-screen
+     recomposite every frame. On the dark base these glow fine without it. */
 }
 
 .aurora-1 {
@@ -250,6 +249,7 @@
   mask-image: radial-gradient(ellipse 75% 60% at 50% 40%, #000 25%, transparent 80%);
   pointer-events: none;
   z-index: 0;
+  transform: translateZ(0);
 }
 
 /* ---------- Misc ---------- */

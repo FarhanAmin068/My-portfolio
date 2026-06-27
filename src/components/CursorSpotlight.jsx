@@ -40,8 +40,7 @@ export default function CursorSpotlight() {
       className="fixed top-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none hidden md:block"
       style={{
         background:
-          'radial-gradient(circle, rgba(129,140,248,0.1) 0%, rgba(56,189,248,0.05) 35%, transparent 70%)',
-        mixBlendMode: 'screen',
+          'radial-gradient(circle, rgba(129,140,248,0.12) 0%, rgba(56,189,248,0.06) 35%, transparent 70%)',
         zIndex: 1,
       }}
     />

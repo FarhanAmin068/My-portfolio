@@ -32,7 +32,7 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-white/[0.06]">
-      <div className="absolute inset-0 bg-[#070a16]/80 backdrop-blur-sm pointer-events-none" />
+      <div className="absolute inset-0 bg-[#070a16] pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-6 py-14">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}

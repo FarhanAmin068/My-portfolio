@@ -113,8 +113,8 @@ function TiltPhoto() {
         <img
           src="/farhan.jpg"
           alt="Farhan Amin"
-          className="w-full h-full object-cover scale-[1.7]"
-          style={{ objectPosition: '50% 38%' }}
+          className="w-full h-full object-cover"
+          style={{ objectPosition: '50% 22%', transform: 'scale(1.7)', transformOrigin: '50% 25%' }}
           loading="eager"
         />
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#04060f]/70 to-transparent" />

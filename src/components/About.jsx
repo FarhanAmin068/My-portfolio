@@ -44,7 +44,7 @@ export default function About() {
             whileInView="show"
             viewport={viewport}
           >
-            <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0e1c]/90 shadow-2xl shadow-black/50 backdrop-blur-md">
+            <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0e1c] shadow-2xl shadow-black/50">
               <div className="flex items-center gap-2 px-5 py-3.5 bg-white/[0.03] border-b border-white/5">
                 <div className="w-3 h-3 rounded-full bg-red-400/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
