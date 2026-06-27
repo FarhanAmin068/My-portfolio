@@ -43,6 +43,7 @@ export default function About() {
             initial="hidden"
             whileInView="show"
             viewport={viewport}
+            className="min-w-0"
           >
             <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0e1c] shadow-2xl shadow-black/50">
               <div className="flex items-center gap-2 px-5 py-3.5 bg-white/[0.03] border-b border-white/5">
@@ -84,6 +85,7 @@ export default function About() {
             initial="hidden"
             whileInView="show"
             viewport={viewport}
+            className="min-w-0"
           >
             <motion.span variants={fadeUp} className="section-label">Who I Am</motion.span>
             <motion.h2 variants={fadeUp} className="section-title mb-6">

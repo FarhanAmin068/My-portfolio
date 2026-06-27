@@ -5,7 +5,7 @@ export default function Section({ id, label, title, subtitle, children, flip = f
   return (
     <section id={id} className={`relative py-28 overflow-hidden ${className}`}>
       {/* Section lighting — large glow orbs, side alternates per section */}
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
+      <div aria-hidden className="section-glow absolute inset-0 pointer-events-none">
         <div
           className={`absolute top-10 w-[34rem] h-[34rem] rounded-full blur-[130px] bg-indigo-600/[0.13] ${
             flip ? '-right-40' : '-left-40'
