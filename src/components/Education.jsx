@@ -8,7 +8,7 @@ const EDUCATION = [
     institution: 'Chittagong University of Engineering and Technology (CUET)',
     period: 'Mar 2022 — July 2026',
     detail: 'Current CGPA 3.84',
-    ongoing: true,
+    ongoing: false,
     tags: ['Machine Learning', 'AI Research', 'Software Engineering'],
   },
   {
