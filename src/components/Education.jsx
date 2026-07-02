@@ -6,8 +6,8 @@ const EDUCATION = [
   {
     degree: 'BSc in Computer Science & Engineering',
     institution: 'Chittagong University of Engineering and Technology (CUET)',
-    period: 'Mar 2022 — Present',
-    detail: 'Current CGPA 3.84 · 141.5 of 159.75 credit hours completed',
+    period: 'Mar 2022 — July 2026',
+    detail: 'Current CGPA 3.84',
     ongoing: true,
     tags: ['Machine Learning', 'AI Research', 'Software Engineering'],
   },
